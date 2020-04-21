@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.collab-proxy": "1.2.16",
+    "com.joaoborks.customscripttemplate": "https://github.com/JoaoBorks/unity-customscripttemplate.git",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.1.4",
     "com.unity.test-framework": "1.1.13",
@@ -38,5 +38,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.joaoborks.customscripttemplate": {
+      "revision": "HEAD",
+      "hash": "bb76019f5681c31dff39ed5cbd2c4fa2b7bf057b"
+    }
   }
 }

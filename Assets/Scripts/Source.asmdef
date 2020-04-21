@@ -1,0 +1,15 @@
+{
+    "name": "Source",
+    "references": [
+        "GUID:9c2d31819db468e45bf58ce477dba435"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
