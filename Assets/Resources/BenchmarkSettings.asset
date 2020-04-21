@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a61e6ad157f09654c93e6fe395243233, type: 3}
-  m_Name: BenchmarkManager
+  m_Script: {fileID: 11500000, guid: e3cba21e1d685a04fb29bd389a77559e, type: 3}
+  m_Name: BenchmarkSettings
   m_EditorClassIdentifier: 
   simulationCount: 100
