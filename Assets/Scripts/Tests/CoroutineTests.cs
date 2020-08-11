@@ -29,19 +29,11 @@ namespace Tests
         [UnityTest]
         public IEnumerator SimpleTest()
         {
-            yield return behaviour.StartCoroutine(RunBenchmarkCoroutine(SimpleTaskRoutine(), behaviour));
+            yield return behaviour.StartCoroutine(RunBenchmarkCoroutine());
         }
 
-        IEnumerator SimpleTaskRoutine()
+        IEnumerator RunBenchmarkCoroutine()
         {
-            yield return null;
-        }
-
-        IEnumerator RunBenchmarkCoroutine(IEnumerator benchmarkCoroutine, MonoBehaviour behaviour)
-        {
-            if (benchmarkCoroutine == null)
-                yield break;
-
             int simulationsRan = 0;
             var elapsedMilisecondsResults = new double[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
             var watch = new Stopwatch();
@@ -50,7 +42,7 @@ namespace Tests
             {
                 watch.Reset();
                 watch.Start();
-                yield return behaviour.StartCoroutine(benchmarkCoroutine);
+                yield return null;
                 watch.Stop();
 
                 elapsedMilisecondsResults[simulationsRan] = watch.Elapsed.TotalMilliseconds;

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: BenchmarkSettings
   m_EditorClassIdentifier: 
   simulationCount: 100
+  initialThreshold: 10
