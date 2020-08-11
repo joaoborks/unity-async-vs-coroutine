@@ -9,8 +9,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BenchmarkSettings", menuName = "Benchmark/Settings")]
 public class BenchmarkSettings : ScriptableObject
 {
+    public int InitialThreshold => initialThreshold;
     public int SimulationCount => simulationCount;
 
     [SerializeField, Range(100, 10000)]
     int simulationCount = 1000;
+    [SerializeField, Range(0, 20)]
+    int initialThreshold = 10;
 }

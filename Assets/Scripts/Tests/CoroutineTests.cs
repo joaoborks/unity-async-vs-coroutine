@@ -43,10 +43,10 @@ namespace Tests
                 yield break;
 
             int simulationsRan = 0;
-            var elapsedMilisecondsResults = new double[benchmarkManager.SimulationCount];
+            var elapsedMilisecondsResults = new double[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
             var watch = new Stopwatch();
 
-            while (simulationsRan < benchmarkManager.SimulationCount)
+            while (simulationsRan < elapsedMilisecondsResults.Length)
             {
                 watch.Reset();
                 watch.Start();
@@ -57,8 +57,10 @@ namespace Tests
                 simulationsRan++;
             }
 
+            elapsedMilisecondsResults = elapsedMilisecondsResults.Skip(benchmarkManager.InitialThreshold).ToArray();
             var result = elapsedMilisecondsResults.Average();
             Debug.Log($"Average elapsed time: {result:0.00}ms");
+            JSONWriter.Write(elapsedMilisecondsResults, GetType().Name);
         }
     }
 }
