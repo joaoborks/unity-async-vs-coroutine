@@ -5,6 +5,7 @@
  */
 
 using NUnit.Framework;
+using Profiling;
 using System.Collections;
 using System.Diagnostics;
 using System.Linq;
@@ -32,6 +33,42 @@ namespace Tests
             yield return behaviour.StartCoroutine(RunBenchmarkCoroutine());
         }
 
+        [UnityTest]
+        public IEnumerator StressTest()
+        {
+            int simulationsRan = 0;
+            var snapshotResults = new MemorySnapshot[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
+            var length = snapshotResults.Length;
+
+            using (var profiler = new MemoryProfiler())
+            {
+                while (simulationsRan < length)
+                {
+                    yield return null;
+                    profiler.GetMemorySnapshot(out var first);
+
+                    for (int i = 0; i < 100; i++)
+                        behaviour.StartCoroutine(EndNextFrameCoroutine());
+
+                    profiler.GetMemorySnapshot(out var final);
+                    yield return null;
+                    yield return null;
+                    snapshotResults[simulationsRan] = final - first;
+                    simulationsRan++;
+                }
+            }
+
+            snapshotResults = snapshotResults.Skip(benchmarkManager.InitialThreshold).ToArray();
+            var averageSnapshot = new MemorySnapshot
+            {
+                TotalMemory = (long)snapshotResults.Select(s => s.TotalMemory).Average(),
+                GCMemory = (long)snapshotResults.Select(s => s.GCMemory).Average(),
+                GCAlloc = (long)snapshotResults.Select(s => s.GCAlloc).Average()
+            };
+            Debug.Log(averageSnapshot);
+            JSONWriter.WriteToFile(snapshotResults, "StressCoroutine");
+        }
+
         IEnumerator RunBenchmarkCoroutine()
         {
             int simulationsRan = 0;
@@ -40,8 +77,7 @@ namespace Tests
 
             while (simulationsRan < elapsedMilisecondsResults.Length)
             {
-                watch.Reset();
-                watch.Start();
+                watch.Restart();
                 yield return null;
                 watch.Stop();
 
@@ -52,7 +88,12 @@ namespace Tests
             elapsedMilisecondsResults = elapsedMilisecondsResults.Skip(benchmarkManager.InitialThreshold).ToArray();
             var result = elapsedMilisecondsResults.Average();
             Debug.Log($"Average elapsed time: {result:0.00}ms");
-            JSONWriter.Write(elapsedMilisecondsResults, GetType().Name);
+            JSONWriter.WriteToFile(elapsedMilisecondsResults, "SimpleCoroutine");
+        }
+
+        IEnumerator EndNextFrameCoroutine()
+        {
+            yield return null;
         }
     }
 }

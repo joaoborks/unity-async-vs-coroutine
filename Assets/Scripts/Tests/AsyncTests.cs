@@ -5,6 +5,7 @@
 */
 
 using NUnit.Framework;
+using Profiling;
 using System;
 using System.Collections;
 using System.Diagnostics;
@@ -32,6 +33,42 @@ namespace Tests
                 yield return null;
         }
 
+        [UnityTest]
+        public IEnumerator StressTest()
+        {
+            int simulationsRan = 0;
+            var snapshotResults = new MemorySnapshot[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
+            var length = snapshotResults.Length;
+            
+            using (var profiler = new MemoryProfiler())
+            {
+                while (simulationsRan < length)
+                {
+                    yield return null;
+                    profiler.GetMemorySnapshot(out var first);
+
+                    for (int i = 0; i < 100; i++)
+                        _ = EndNextFrameAsync();
+
+                    profiler.GetMemorySnapshot(out var final);
+                    yield return null;
+                    yield return null;
+                    snapshotResults[simulationsRan] = final - first;
+                    simulationsRan++;
+                }
+            }
+
+            snapshotResults = snapshotResults.Skip(benchmarkManager.InitialThreshold).ToArray();
+            var averageSnapshot = new MemorySnapshot
+            {
+                TotalMemory = (long)snapshotResults.Select(s => s.TotalMemory).Average(),
+                GCMemory = (long)snapshotResults.Select(s => s.GCMemory).Average(),
+                GCAlloc = (long)snapshotResults.Select(s => s.GCAlloc).Average()
+            };
+            Debug.Log(averageSnapshot);
+            JSONWriter.WriteToFile(snapshotResults, "StressAsync");
+        }
+
         async Task SimpleTaskAsync(CancellationToken token = default)
         {
             int simulationsRan = 0;
@@ -42,8 +79,7 @@ namespace Tests
             {
                 while (simulationsRan < elapsedMilisecondsResults.Length && !token.IsCancellationRequested)
                 {
-                    watch.Reset();
-                    watch.Start();
+                    watch.Restart();
                     await Task.Yield();
                     watch.Stop();
 
@@ -54,7 +90,7 @@ namespace Tests
                 elapsedMilisecondsResults = elapsedMilisecondsResults.Skip(benchmarkManager.InitialThreshold).ToArray();
                 var result = elapsedMilisecondsResults.Average();
                 Debug.Log($"Average elapsed time: {result:0.00}ms");
-                JSONWriter.Write(elapsedMilisecondsResults, GetType().Name);
+                JSONWriter.WriteToFile(elapsedMilisecondsResults, "SimpleAsync");
             }
             catch (Exception e)
             {
@@ -63,6 +99,11 @@ namespace Tests
                     return;
                 throw e;
             }
+        }
+
+        async Task EndNextFrameAsync()
+        {
+            await Task.Yield();
         }
     }
 }
