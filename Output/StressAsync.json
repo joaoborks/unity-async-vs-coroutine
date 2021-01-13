@@ -1,503 +1,503 @@
 {
   "StressAsync": {
     "0": {
-      "TotalMemory": 119240,
-      "GCMemory": 28672,
+      "TotalMemory": 283048,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "1": {
-      "TotalMemory": 115032,
-      "GCMemory": 28672,
+      "TotalMemory": 236760,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "2": {
-      "TotalMemory": 318438,
-      "GCMemory": 32768,
+      "TotalMemory": 243726,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "3": {
-      "TotalMemory": 68376,
-      "GCMemory": 32768,
+      "TotalMemory": 246736,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "4": {
-      "TotalMemory": 110650,
-      "GCMemory": 32768,
+      "TotalMemory": 293839,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "5": {
-      "TotalMemory": 239416,
-      "GCMemory": 36864,
+      "TotalMemory": 223096,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "6": {
-      "TotalMemory": 36864,
-      "GCMemory": 36864,
+      "TotalMemory": 267704,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "7": {
-      "TotalMemory": 345408,
-      "GCMemory": 32768,
+      "TotalMemory": 184522,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "8": {
-      "TotalMemory": 278425,
-      "GCMemory": 32768,
+      "TotalMemory": 259976,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "9": {
-      "TotalMemory": 227351,
-      "GCMemory": 32768,
+      "TotalMemory": 242456,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "10": {
-      "TotalMemory": 198501,
-      "GCMemory": 28672,
+      "TotalMemory": 190056,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "11": {
-      "TotalMemory": 28672,
-      "GCMemory": 28672,
+      "TotalMemory": 206072,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "12": {
-      "TotalMemory": 154264,
+      "TotalMemory": 257759,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "13": {
-      "TotalMemory": 273323,
+      "TotalMemory": 181832,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "14": {
-      "TotalMemory": 121104,
+      "TotalMemory": 230632,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "15": {
-      "TotalMemory": 859975,
-      "GCMemory": 32768,
+      "TotalMemory": 272670,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "16": {
-      "TotalMemory": 226650,
+      "TotalMemory": 277800,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "17": {
-      "TotalMemory": 102507,
-      "GCMemory": 32768,
-      "GCAlloc": 28000
-    },
-    "18": {
-      "TotalMemory": 789942,
-      "GCMemory": 36864,
-      "GCAlloc": 28000
-    },
-    "19": {
-      "TotalMemory": 351197,
-      "GCMemory": 36864,
-      "GCAlloc": 28000
-    },
-    "20": {
-      "TotalMemory": 190824,
+      "TotalMemory": 241928,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
+    "18": {
+      "TotalMemory": 73345,
+      "GCMemory": 40960,
+      "GCAlloc": 28000
+    },
+    "19": {
+      "TotalMemory": 131179,
+      "GCMemory": 40960,
+      "GCAlloc": 28000
+    },
+    "20": {
+      "TotalMemory": 241432,
+      "GCMemory": 32768,
+      "GCAlloc": 28000
+    },
     "21": {
-      "TotalMemory": 170312,
+      "TotalMemory": 315800,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "22": {
-      "TotalMemory": 255080,
+      "TotalMemory": 265336,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "23": {
-      "TotalMemory": 335760,
-      "GCMemory": 36864,
+      "TotalMemory": 231576,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "24": {
-      "TotalMemory": 114390,
-      "GCMemory": 36864,
+      "TotalMemory": 304692,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "25": {
-      "TotalMemory": 285383,
-      "GCMemory": 36864,
+      "TotalMemory": 174600,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "26": {
-      "TotalMemory": 210488,
+      "TotalMemory": 241688,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "27": {
-      "TotalMemory": 347871,
-      "GCMemory": 28672,
+      "TotalMemory": 209076,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "28": {
-      "TotalMemory": 158947,
-      "GCMemory": 28672,
+      "TotalMemory": 797455,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "29": {
-      "TotalMemory": 1037127,
+      "TotalMemory": 276257,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "30": {
-      "TotalMemory": 711787,
-      "GCMemory": 36864,
+      "TotalMemory": 264368,
+      "GCMemory": 40960,
       "GCAlloc": 28000
     },
     "31": {
-      "TotalMemory": 140728,
+      "TotalMemory": 183875,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "32": {
-      "TotalMemory": 278473,
-      "GCMemory": 32768,
+      "TotalMemory": 221368,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "33": {
-      "TotalMemory": 119200,
-      "GCMemory": 32768,
+      "TotalMemory": 220792,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "34": {
-      "TotalMemory": 264106,
+      "TotalMemory": 276136,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "35": {
-      "TotalMemory": 241751,
+      "TotalMemory": 141427,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "36": {
-      "TotalMemory": 155248,
-      "GCMemory": 28672,
+      "TotalMemory": 163832,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "37": {
-      "TotalMemory": 452000,
+      "TotalMemory": 260672,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "38": {
-      "TotalMemory": 123296,
+      "TotalMemory": 199352,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "39": {
-      "TotalMemory": 163536,
-      "GCMemory": 36864,
+      "TotalMemory": 236296,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "40": {
-      "TotalMemory": 178008,
-      "GCMemory": 36864,
+      "TotalMemory": 297036,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "41": {
-      "TotalMemory": 211874,
+      "TotalMemory": 199407,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "42": {
-      "TotalMemory": 271525,
+      "TotalMemory": 211560,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "43": {
-      "TotalMemory": 174800,
+      "TotalMemory": 230824,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "44": {
-      "TotalMemory": 364954,
+      "TotalMemory": 114915,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "45": {
-      "TotalMemory": 170883,
+      "TotalMemory": 271306,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "46": {
-      "TotalMemory": 213261,
-      "GCMemory": 32768,
+      "TotalMemory": 229528,
+      "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "47": {
-      "TotalMemory": 150184,
+      "TotalMemory": 275152,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "48": {
-      "TotalMemory": 288597,
-      "GCMemory": 32768,
+      "TotalMemory": 280248,
+      "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "49": {
-      "TotalMemory": 199064,
-      "GCMemory": 36864,
+      "TotalMemory": 231368,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "50": {
-      "TotalMemory": 249121,
-      "GCMemory": 36864,
+      "TotalMemory": 303071,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "51": {
-      "TotalMemory": 246272,
+      "TotalMemory": 260912,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "52": {
-      "TotalMemory": 184947,
+      "TotalMemory": 150552,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "53": {
-      "TotalMemory": 149304,
+      "TotalMemory": 308269,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "54": {
-      "TotalMemory": 199575,
+      "TotalMemory": 107198,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "55": {
-      "TotalMemory": 259634,
-      "GCMemory": 36864,
+      "TotalMemory": 256513,
+      "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "56": {
-      "TotalMemory": 199000,
+      "TotalMemory": 40075,
       "GCMemory": 36864,
       "GCAlloc": 28000
     },
     "57": {
-      "TotalMemory": 225352,
+      "TotalMemory": 228766,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "58": {
-      "TotalMemory": 269215,
+      "TotalMemory": 264564,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "59": {
-      "TotalMemory": 114824,
+      "TotalMemory": 149602,
       "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "60": {
-      "TotalMemory": 154472,
+      "TotalMemory": 195880,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "61": {
-      "TotalMemory": 476371,
+      "TotalMemory": 175590,
       "GCMemory": 40960,
       "GCAlloc": 28000
     },
     "62": {
-      "TotalMemory": 36864,
-      "GCMemory": 36864,
+      "TotalMemory": 108027,
+      "GCMemory": 40960,
       "GCAlloc": 28000
     },
     "63": {
-      "TotalMemory": 113215,
+      "TotalMemory": 253603,
       "GCMemory": 32768,
       "GCAlloc": 28000
     },
     "64": {
-      "TotalMemory": 205576,
-      "GCMemory": 32768,
+      "TotalMemory": 77843,
+      "GCMemory": 0,
       "GCAlloc": 28000
     },
     "65": {
-      "TotalMemory": 225192,
-      "GCMemory": 36864,
+      "TotalMemory": 122528,
+      "GCMemory": 0,
       "GCAlloc": 28000
     },
     "66": {
-      "TotalMemory": 175328,
-      "GCMemory": 32768,
+      "TotalMemory": 245338,
+      "GCMemory": 0,
       "GCAlloc": 28000
     },
     "67": {
-      "TotalMemory": 132536,
+      "TotalMemory": 167372,
       "GCMemory": 0,
       "GCAlloc": 28000
     },
     "68": {
-      "TotalMemory": 148751,
+      "TotalMemory": 121552,
       "GCMemory": 0,
       "GCAlloc": 28000
     },
     "69": {
-      "TotalMemory": 316377,
-      "GCMemory": 0,
+      "TotalMemory": 195082,
+      "GCMemory": 8192,
       "GCAlloc": 28000
     },
     "70": {
-      "TotalMemory": 132584,
-      "GCMemory": 0,
+      "TotalMemory": 12288,
+      "GCMemory": 12288,
       "GCAlloc": 28000
     },
     "71": {
-      "TotalMemory": 110824,
-      "GCMemory": 0,
+      "TotalMemory": 154424,
+      "GCMemory": 12288,
       "GCAlloc": 28000
     },
     "72": {
-      "TotalMemory": 272680,
+      "TotalMemory": 8192,
       "GCMemory": 8192,
       "GCAlloc": 28000
     },
     "73": {
-      "TotalMemory": 298284,
+      "TotalMemory": 196152,
       "GCMemory": 8192,
       "GCAlloc": 28000
     },
     "74": {
-      "TotalMemory": 223248,
+      "TotalMemory": 306504,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "75": {
-      "TotalMemory": 190040,
-      "GCMemory": 28672,
+      "TotalMemory": 164277,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "76": {
-      "TotalMemory": 217240,
+      "TotalMemory": 238568,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "77": {
-      "TotalMemory": 228536,
+      "TotalMemory": 637910,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "78": {
-      "TotalMemory": 20480,
+      "TotalMemory": 1041421,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "79": {
-      "TotalMemory": 272648,
-      "GCMemory": 24576,
+      "TotalMemory": 288456,
+      "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "80": {
-      "TotalMemory": 345124,
-      "GCMemory": 24576,
+      "TotalMemory": 203000,
+      "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "81": {
-      "TotalMemory": 99566,
+      "TotalMemory": 195163,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "82": {
-      "TotalMemory": 25443,
-      "GCMemory": 20480,
-      "GCAlloc": 28000
-    },
-    "83": {
-      "TotalMemory": 367868,
+      "TotalMemory": 145435,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
+    "83": {
+      "TotalMemory": 221859,
+      "GCMemory": 20480,
+      "GCAlloc": 28000
+    },
     "84": {
-      "TotalMemory": 258576,
+      "TotalMemory": 228424,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "85": {
-      "TotalMemory": 155768,
-      "GCMemory": 24576,
+      "TotalMemory": 243880,
+      "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "86": {
-      "TotalMemory": 106032,
+      "TotalMemory": 221704,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "87": {
-      "TotalMemory": 273512,
+      "TotalMemory": 157475,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "88": {
-      "TotalMemory": 232312,
+      "TotalMemory": 62048,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "89": {
-      "TotalMemory": 261347,
+      "TotalMemory": 218889,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "90": {
-      "TotalMemory": 214176,
+      "TotalMemory": 46816,
       "GCMemory": 20480,
       "GCAlloc": 28000
     },
     "91": {
-      "TotalMemory": 313494,
-      "GCMemory": 28672,
-      "GCAlloc": 28000
-    },
-    "92": {
-      "TotalMemory": 63282,
+      "TotalMemory": 231876,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
+    "92": {
+      "TotalMemory": 345595,
+      "GCMemory": 28672,
+      "GCAlloc": 28000
+    },
     "93": {
-      "TotalMemory": 132760,
-      "GCMemory": 20480,
+      "TotalMemory": 151281,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "94": {
-      "TotalMemory": 166728,
-      "GCMemory": 20480,
+      "TotalMemory": 208705,
+      "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "95": {
-      "TotalMemory": 135912,
+      "TotalMemory": 164779,
       "GCMemory": 24576,
       "GCAlloc": 28000
     },
     "96": {
-      "TotalMemory": 228056,
-      "GCMemory": 24576,
+      "TotalMemory": 159419,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "97": {
-      "TotalMemory": 260869,
-      "GCMemory": 24576,
+      "TotalMemory": 242884,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "98": {
-      "TotalMemory": 200797,
-      "GCMemory": 20480,
+      "TotalMemory": 277832,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     },
     "99": {
-      "TotalMemory": 719137,
-      "GCMemory": 24576,
+      "TotalMemory": 207296,
+      "GCMemory": 28672,
       "GCAlloc": 28000
     }
   }
