@@ -1,9 +1,11 @@
 {
     "name": "Source.Tests",
+    "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Source"
+        "Source",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
