@@ -24,6 +24,8 @@ public static class JSONWriter
         var json = JsonConvert.SerializeObject(wrapper, Formatting.Indented);
         var path = Path.Combine(Application.dataPath, "..", "Output", $"{filename}.json");
         File.WriteAllText(path, json);
+#if UNITY_EDITOR
         AssetDatabase.Refresh();
+#endif
     }
 }

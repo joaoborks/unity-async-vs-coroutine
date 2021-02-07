@@ -133,41 +133,20 @@ namespace Tests
         [UnityTest]
         public IEnumerator StressCoroutineTest()
         {
-            yield return StressTest(() => behaviour.StartCoroutine(endNextFrameCoroutine()), "StressCoroutine");
+            yield return behaviour.StartCoroutine(stressTestRoutine());
 
             static IEnumerator endNextFrameCoroutine()
             {
                 yield return null;
             }
-        }
 
-        [UnityTest]
-        public IEnumerator StressAsyncTest()
-        {
-            yield return StressTest(() => _ = endNextFrameAsync(), "StressAsync");
-
-            static async Task endNextFrameAsync() => await Task.Yield();
-        }
-
-        [UnityTest]
-        public IEnumerator StressUniTaskTest()
-        {
-            yield return StressTest(() => _ = endNextFrameAsync(), "StressUniTask");
-
-            static async UniTask endNextFrameAsync() => await UniTask.Yield();
-        }
-
-        void CreateSimulationArray<T>(out T[] simulationArray) => simulationArray = new T[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
-
-        void ConcludeTest<T>(T[] results, string testLabel) => JSONWriter.WriteToFile(results, testLabel);
-
-        Coroutine StressTest(Action stressAction, string testLabel)
-        {
             IEnumerator stressTestRoutine()
             {
                 int simulationsRan = 0;
                 CreateSimulationArray<MemorySnapshot>(out var snapshotResults);
                 var length = snapshotResults.Length;
+                var coroutines = new Coroutine[100];
+                int i;
 
                 using (var profiler = new MemoryProfiler())
                 {
@@ -176,11 +155,13 @@ namespace Tests
                         yield return null;
                         profiler.GetMemorySnapshot(out var first);
 
-                        for (int i = 0; i < 100; i++)
-                            stressAction();
+                        for (i = 0; i < 100; i++)
+                            coroutines[i] = behaviour.StartCoroutine(endNextFrameCoroutine());
 
                         profiler.GetMemorySnapshot(out var final);
                         yield return null;
+                        for (i = 0; i < 100; i++)
+                            behaviour.StopCoroutine(coroutines[i]);
                         snapshotResults[simulationsRan] = final - first;
                         simulationsRan++;
                     }
@@ -194,9 +175,101 @@ namespace Tests
                     GCAlloc = (long)snapshotResults.Select(s => s.GCAlloc).Average()
                 };
                 Debug.Log(averageSnapshot);
-                ConcludeTest(snapshotResults, testLabel);
+                ConcludeTest(snapshotResults, "StressCoroutine");
             }
-            return behaviour.StartCoroutine(stressTestRoutine());
         }
+
+        [UnityTest]
+        public IEnumerator StressAsyncTest()
+        {
+            yield return behaviour.StartCoroutine(stressTestRoutine());
+
+            static async Task endNextFrameAsync() => await Task.Yield();
+
+            IEnumerator stressTestRoutine()
+            {
+                int simulationsRan = 0;
+                CreateSimulationArray<MemorySnapshot>(out var snapshotResults);
+                var length = snapshotResults.Length;
+                var tasks = new Task[100];
+                int i;
+
+                using (var profiler = new MemoryProfiler())
+                {
+                    while (simulationsRan < length)
+                    {
+                        yield return null;
+                        profiler.GetMemorySnapshot(out var first);
+
+                        for (i = 0; i < 100; i++)
+                            tasks[i] = endNextFrameAsync();
+
+                        profiler.GetMemorySnapshot(out var final);
+                        yield return null;
+                        Task.WaitAll(tasks);
+                        snapshotResults[simulationsRan] = final - first;
+                        simulationsRan++;
+                    }
+                }
+
+                snapshotResults = snapshotResults.Skip(benchmarkManager.InitialThreshold).ToArray();
+                var averageSnapshot = new MemorySnapshot
+                {
+                    TotalMemory = (long)snapshotResults.Select(s => s.TotalMemory).Average(),
+                    GCMemory = (long)snapshotResults.Select(s => s.GCMemory).Average(),
+                    GCAlloc = (long)snapshotResults.Select(s => s.GCAlloc).Average()
+                };
+                Debug.Log(averageSnapshot);
+                ConcludeTest(snapshotResults, "StressAsync");
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator StressUniTaskTest()
+        {
+            yield return behaviour.StartCoroutine(stressTestRoutine());
+
+            static async UniTask endNextFrameAsync() => await UniTask.Yield();
+
+            IEnumerator stressTestRoutine()
+            {
+                int simulationsRan = 0;
+                CreateSimulationArray<MemorySnapshot>(out var snapshotResults);
+                var length = snapshotResults.Length;
+                var uniTasks = new UniTask[100];
+
+                using (var profiler = new MemoryProfiler())
+                {
+                    while (simulationsRan < length)
+                    {
+                        yield return null;
+                        profiler.GetMemorySnapshot(out var first);
+
+                        for (int i = 0; i < 100; i++)
+                            uniTasks[i] = endNextFrameAsync();
+
+                        profiler.GetMemorySnapshot(out var final);
+                        yield return null;
+                        UniTask.WhenAll(uniTasks).GetAwaiter().GetResult();
+                        snapshotResults[simulationsRan] = final - first;
+                        simulationsRan++;
+                    }
+                }
+
+                snapshotResults = snapshotResults.Skip(benchmarkManager.InitialThreshold).ToArray();
+                var averageSnapshot = new MemorySnapshot
+                {
+                    TotalMemory = (long)snapshotResults.Select(s => s.TotalMemory).Average(),
+                    GCMemory = (long)snapshotResults.Select(s => s.GCMemory).Average(),
+                    GCAlloc = (long)snapshotResults.Select(s => s.GCAlloc).Average()
+                };
+                Debug.Log(averageSnapshot);
+                ConcludeTest(snapshotResults, "StressUniTask");
+            }
+        }
+
+        void CreateSimulationArray<T>(out T[] simulationArray) => simulationArray = new T[benchmarkManager.SimulationCount + benchmarkManager.InitialThreshold];
+
+        void ConcludeTest<T>(T[] results, string testLabel) => JSONWriter.WriteToFile(results, testLabel);
     }
 }
